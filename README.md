@@ -1,3 +1,3 @@
 # goodies
 
-PolyWorks 2021 IR2 SDK examples.
+PolyWorks MS 2021 IR2 SDK examples.
