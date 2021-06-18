@@ -1,0 +1,26 @@
+HKCR
+{
+	CompanyNamePlanarScanner.CompanyNamePlanarScanner.1 = s 'CompanyNamePlanarScanner Class'
+	{
+		CLSID = s '{987FEFE5-EF58-4C10-B5DC-2C2A103A8C71}'
+	}
+	CompanyNamePlanarScanner.CompanyNamePlanarScanner = s 'CompanyNamePlanarScanner Class'
+	{
+		CLSID = s '{987FEFE5-EF58-4C10-B5DC-2C2A103A8C71}'
+		CurVer = s 'CompanyNamePlanarScanner.CompanyNamePlanarScanner.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {987FEFE5-EF58-4C10-B5DC-2C2A103A8C71} = s 'CompanyNamePlanarScanner Class'
+		{
+			ProgID = s 'CompanyNamePlanarScanner.CompanyNamePlanarScanner.1'
+			VersionIndependentProgID = s 'CompanyNamePlanarScanner.CompanyNamePlanarScanner'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{9E43CEE7-CF61-4051-9E46-54FFB6BBF747}'
+		}
+	}
+}

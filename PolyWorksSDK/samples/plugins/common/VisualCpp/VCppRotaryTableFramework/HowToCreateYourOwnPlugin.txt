@@ -1,0 +1,49 @@
+Steps to create a new Rotary table plug-in for PolyWorks 2021 using the Visual C++ Rotary Table Framework
+
+1- Change the strings "CompanyName" and "COMPANYNAME" by the name of your company everywhere
+   (including all files (*.*) and the file names)
+
+2- In the .rc file, change the values for the "FileDescription" and "ProductName" fields to a more appropriate name,
+   such as "CompanyName Rotary Table"
+
+3- In the .idl and .rgs files, replace each of the following UUIDs by new UUIDs generated
+   by either uuidgen.exe or guidgen.exe:
+    4E920F64-B8E2-4447-A0CF-820C17777A08
+    EE37024F-2F57-4B30-894A-8F0488737E3E
+    F2903F3C-2F69-4D12-8B0D-95B27091678B
+
+4- In Visual Studio, go in the "Project Properties", for All Configurations, in the C/C++ section, the General category,
+   and change the "Additional include directories" option to use the right path to the SDK's include directory.
+
+5- Search for TODO comments and complete the code with the instructions given there
+   (don't forget to change the include path for the IIMPlugin.tlb in the idl file)
+
+6- Once the dll is compiled, copy it to the plugins directory of your Polyworks installation.
+   Ex: C:\Program Files\InnovMetric\PolyWorks MS 2021\plugins
+   Then, run as administrator the RegisterIMCOMServers.bat file found in the \bin directory of the
+   Polyworks installation to register the plug-in (this registration needs to be done only once.)
+
+7- Start the Workspace Manager, look for your plug-in's name in the Tools > Options > Plug-ins section,
+   select it, then click OK to close the Options window.
+
+8- To check if your plug-in is correctly loaded by PolyWorks|Inspector (it's the only application that supports rotary table plug-ins),
+   check that it appears in the list of rotary tables in the Devices toolbar (showing the name returned by RotaryTableNameGet).
+
+Note that it is a good practice to change the UUIDs and re-register your plug-in each time you make significant 
+changes to your plug-in. On systems with multiple versions of PolyWorks installed concurrently, this is particularly
+important to make sure that each version runs the plug-in located in its own plugins directory.
+
+Contact the PolyWorks SDK support team (supportsdk@innovmetric.com) for any question or comment
+
+Changes note:
+
+If you built your own plug-in based on an earlier version of this framework, we recommend that you use
+a file differences tracking tool (such as WinDiff or Araxis Merge) to compare the content of this version
+of the framework with the content of the framework you used to build you plug-in. This way, you'll better
+be able to see what part of the code was changed and decide whether you want to apply similar changes to
+your own plug-in.
+
+Changes in V2021 IR1:
+
+Replacement of raw pointers with CComPtr.
+Code updated to use nullptr instead of NULL when possible for type safety.

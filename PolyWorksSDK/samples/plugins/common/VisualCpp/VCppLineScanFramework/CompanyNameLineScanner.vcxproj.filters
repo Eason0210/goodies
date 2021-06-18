@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{b9d04fdd-115e-413a-98e5-9e8b7e2a02af}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{c0602da4-c10c-4da5-8dd5-a501acd117f4}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{27183c40-b0dd-4227-b189-4daf25898aef}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{e0135e21-f781-4911-9d20-b07503d5a2b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK">
+      <UniqueIdentifier>{05407e5d-bf1e-4f7a-a50d-6bdcd454ffe8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="COM SDK">
+      <UniqueIdentifier>{2d161ad3-4d7a-47e2-a755-a743fac7a7d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="COM SDK\Util">
+      <UniqueIdentifier>{9fd41eee-881a-47e1-a45e-05e66c96d324}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CComMessageFilter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCompanyNameScanner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCompanyNameScannerReceiver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCompanyNameScannerSettings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CompanyNameConst.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CompanyNameScanner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDlgCompanyName.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="CDlgIMAlign.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="CDlgIMInspect.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="CThreadHelper.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="CCompanyNameSDKStub.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="CDlgIMInspectOptions.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="CDlgIMAlignOptions.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="CScanningProfilesUser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDlgSaveAsProfile.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="TooltipComboBox.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Diagnostics.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="CIMDlgOptionsBase.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="CIMPropertyGridProperty.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="CIMPropertyGridCheckBoxProperty.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="CIMPropertyGridColorProperty.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="CIMPropertyGridCtrl.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="CComCommand.cpp">
+      <Filter>COM SDK\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CComCommandInfo.cpp">
+      <Filter>COM SDK\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CComCommandInfoImpl.cpp">
+      <Filter>COM SDK\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CComCommandParameter.cpp">
+      <Filter>COM SDK\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CComCommandParameterEnum.cpp">
+      <Filter>COM SDK\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CComCommandParameterEnumImpl.cpp">
+      <Filter>COM SDK\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CComCommandParameterInfo.cpp">
+      <Filter>COM SDK\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CComCommandParameterInfoImpl.cpp">
+      <Filter>COM SDK\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CCompanyNameCmd.cpp">
+      <Filter>COM SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SafeArrayConversion.cpp">
+      <Filter>COM SDK\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HowToCreateYourOwnPlugin.txt" />
+    <None Include="CompanyNameLineScanner.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="CompanyNameLineScanner.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CompanyNameScanner.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CComMessageFilter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCompanyNameScanner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCompanyNameScannerReceiver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCompanyNameScannerSettings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CompanyNameConst.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CTSetting.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDlgCompanyName.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="CDlgIMAlign.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="CDlgIMInspect.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="CThreadHelper.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CCompanyNameSDKStub.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CDlgIMInspectOptions.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="CDlgIMAlignOptions.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="CScanningProfilesUser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDlgSaveAsProfile.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TooltipComboBox.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Diagnostics.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIMDlgOptionsBase.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="CIMPropertyGridProperty.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="CIMPropertyGridCheckBoxProperty.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="CIMPropertyGridColorProperty.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="CIMPropertyGridCtrl.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="StrUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CComCommand.h">
+      <Filter>COM SDK\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CComCommandInfo.h">
+      <Filter>COM SDK\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CComCommandInfoImpl.h">
+      <Filter>COM SDK\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CComCommandParameter.h">
+      <Filter>COM SDK\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CComCommandParameterEnum.h">
+      <Filter>COM SDK\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CComCommandParameterEnumImpl.h">
+      <Filter>COM SDK\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CComCommandParameterInfo.h">
+      <Filter>COM SDK\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CComCommandParameterInfoImpl.h">
+      <Filter>COM SDK\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CCompanyNameCmd.h">
+      <Filter>COM SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="SafeArrayConversion.h">
+      <Filter>COM SDK\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="CompanyNameLineScanner.idl">
+      <Filter>Source Files</Filter>
+    </Midl>
+  </ItemGroup>
+</Project>

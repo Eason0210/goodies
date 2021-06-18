@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="C++ SDK">
+      <UniqueIdentifier>{6efcc529-ac20-469c-a557-d30aecb52638}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{5c5917ab-9914-4c80-ab51-3963b117831c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util">
+      <UniqueIdentifier>{daa324ba-79a0-4543-b0be-b863d916db2e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CComCommand.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CComCommandInfo.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CComCommandInfoImpl.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CComCommandParameter.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CComCommandParameterEnum.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CComCommandParameterEnumImpl.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CComCommandParameterInfo.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CComCommandParameterInfoImpl.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CComMessageFilter.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CCompanyNameCommands.cpp">
+      <Filter>C++ SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="CCompanyNameCppPlugin.cpp" />
+    <ClCompile Include="CCompanyNameNotificationFeedback.cpp">
+      <Filter>C++ SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="CCompanyNameNotificationHandlerConnectionPoint.cpp">
+      <Filter>C++ SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="CCompanyNameNotificationHandlerPlugin.cpp">
+      <Filter>C++ SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="CDlgCompanyNameNotificationViewer.cpp">
+      <Filter>C++ SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="CompanyNameConst.cpp">
+      <Filter>C++ SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="CompanyNameNotificationHandlerDll.cpp" />
+    <ClCompile Include="SafeArrayConversion.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Resources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CompanyNameNotificationHandler.def" />
+    <None Include="CompanyNameNotificationHandler.rgs">
+      <Filter>Resources</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CComCommand.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CComCommandInfo.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CComCommandInfoImpl.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CComCommandParameter.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CComCommandParameterEnum.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CComCommandParameterEnumImpl.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CComCommandParameterInfo.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CComCommandParameterInfoImpl.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CComMessageFilter.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CCompanyNameCommands.h">
+      <Filter>C++ SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CCompanyNameConnectionPointImpl.h">
+      <Filter>C++ SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CCompanyNameCppPlugin.h" />
+    <ClInclude Include="CCompanyNameNotificationFeedback.h">
+      <Filter>C++ SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CCompanyNameNotificationHandlerConnectionPoint.h">
+      <Filter>C++ SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CCompanyNameNotificationHandlerPlugin.h">
+      <Filter>C++ SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CDlgCompanyNameNotificationViewer.h">
+      <Filter>C++ SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CompanyNameConst.h">
+      <Filter>C++ SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="IMCOMInterfaceInclude.h" />
+    <ClInclude Include="INotificationFeedback.h">
+      <Filter>C++ SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="SafeArrayConversion.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="StrUtil.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Types.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="CompanyNameNotificationHandler.idl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CompanyNameNotificationHandler.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="HowToCreateYourOwnPlugin.txt" />
+  </ItemGroup>
+</Project>

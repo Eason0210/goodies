@@ -1,0 +1,9 @@
+; CompanyNameRotaryTable.def : Declares the module parameters.
+
+LIBRARY      "CompanyNameNotificationHandler.DLL"
+
+EXPORTS
+	DllCanUnloadNow     PRIVATE
+	DllGetClassObject   PRIVATE
+	DllRegisterServer   PRIVATE
+	DllUnregisterServer	PRIVATE

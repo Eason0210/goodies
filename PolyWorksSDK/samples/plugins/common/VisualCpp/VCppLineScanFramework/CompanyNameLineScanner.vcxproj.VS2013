@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DF660A0E-F316-4C6E-916D-2DB2FA6B13AB}</ProjectGuid>
+    <Keyword>AtlProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfAtl>false</UseOfAtl>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\..\..\include\PolyWorksSDK\COM;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>$(ProjectName).tlb</TypeLibraryName>
+      <OutputDirectory>$(Platform)\$(Configuration)</OutputDirectory>
+      <HeaderFileName>$(ProjectName).h</HeaderFileName>
+      <InterfaceIdentifierFileName>$(ProjectName)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>$(ProjectName)_p.c</ProxyFileName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\..\..\include;$(Platform)\$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_AFXEXT;NOMINMAX;_WIN32_DCOM;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>false</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ErrorReporting>None</ErrorReporting>
+      <TreatWarningAsError />
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(Platform)\$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>PolyWorksSDK.lib;comsupp.lib;version.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\..\..\..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ManifestFile>$(IntDir)$(TargetName)$(TargetExt).intermediate.manifest</ManifestFile>
+      <ModuleDefinitionFile>.\$(ProjectName).def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(IntDir)$(ProjectName).pdb</ProgramDatabaseFile>
+      <LargeAddressAware>true</LargeAddressAware>
+      <ImportLibrary>$(Platform)\$(Configuration)\$(ProjectName).lib</ImportLibrary>
+      <TargetMachine>MachineX64</TargetMachine>
+      <LinkErrorReporting>NoErrorReport</LinkErrorReporting>
+    </Link>
+    <Manifest>
+      <VerboseOutput>false</VerboseOutput>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\..\..\include\PolyWorksSDK\COM;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>$(ProjectName).tlb</TypeLibraryName>
+      <OutputDirectory>$(Platform)\$(Configuration)</OutputDirectory>
+      <HeaderFileName>$(ProjectName).h</HeaderFileName>
+      <InterfaceIdentifierFileName>$(ProjectName)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>$(ProjectName)_p.c</ProxyFileName>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\..\..\..\..\include;$(Platform)\$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_AFXEXT;NOMINMAX;_WIN32_DCOM;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>false</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat />
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ErrorReporting>None</ErrorReporting>
+      <TreatWarningAsError />
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(Platform)\$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>PolyWorksSDK.lib;comsupp.lib;version.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\..\..\..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ManifestFile>$(IntDir)$(TargetName)$(TargetExt).intermediate.manifest</ManifestFile>
+      <ModuleDefinitionFile>.\$(ProjectName).def</ModuleDefinitionFile>
+      <ProgramDatabaseFile>$(IntDir)$(ProjectName).pdb</ProgramDatabaseFile>
+      <LargeAddressAware>true</LargeAddressAware>
+      <ImportLibrary>$(Platform)\$(Configuration)\$(ProjectName).lib</ImportLibrary>
+      <TargetMachine>MachineX64</TargetMachine>
+      <LinkErrorReporting>NoErrorReport</LinkErrorReporting>
+    </Link>
+    <Manifest>
+      <VerboseOutput>false</VerboseOutput>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CComCommand.cpp" />
+    <ClCompile Include="CComCommandInfo.cpp" />
+    <ClCompile Include="CComCommandInfoImpl.cpp" />
+    <ClCompile Include="CComCommandParameter.cpp" />
+    <ClCompile Include="CComCommandParameterEnum.cpp" />
+    <ClCompile Include="CComCommandParameterEnumImpl.cpp" />
+    <ClCompile Include="CComCommandParameterInfo.cpp" />
+    <ClCompile Include="CComCommandParameterInfoImpl.cpp" />
+    <ClCompile Include="CComMessageFilter.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MinSpace</Optimization>
+      <TreatWarningAsError />
+    </ClCompile>
+    <ClCompile Include="CCompanyNameCmd.cpp" />
+    <ClCompile Include="CCompanyNameSDKStub.cpp" />
+    <ClCompile Include="CCompanyNameScanner.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MinSpace</Optimization>
+      <TreatWarningAsError />
+    </ClCompile>
+    <ClCompile Include="CCompanyNameScannerReceiver.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MinSpace</Optimization>
+      <TreatWarningAsError />
+    </ClCompile>
+    <ClCompile Include="CCompanyNameScannerSettings.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MinSpace</Optimization>
+      <TreatWarningAsError />
+    </ClCompile>
+    <ClCompile Include="CDlgIMAlignOptions.cpp" />
+    <ClCompile Include="CDlgIMInspectOptions.cpp" />
+    <ClCompile Include="CIMDlgOptionsBase.cpp" />
+    <ClCompile Include="CDlgSaveAsProfile.cpp" />
+    <ClCompile Include="CIMPropertyGridCheckBoxProperty.cpp" />
+    <ClCompile Include="CIMPropertyGridColorProperty.cpp" />
+    <ClCompile Include="CIMPropertyGridCtrl.cpp" />
+    <ClCompile Include="CIMPropertyGridProperty.cpp" />
+    <ClCompile Include="CompanyNameConst.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MinSpace</Optimization>
+      <TreatWarningAsError />
+    </ClCompile>
+    <ClCompile Include="CompanyNameScanner.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MinSpace</Optimization>
+      <TreatWarningAsError />
+    </ClCompile>
+    <ClCompile Include="ApplicationUtils.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MinSpace</Optimization>
+      <TreatWarningAsError />
+    </ClCompile>
+    <ClCompile Include="CScanningProfilesUser.cpp" />
+    <ClCompile Include="CThreadHelper.cpp" />
+    <ClCompile Include="Diagnostics.cpp" />
+    <ClCompile Include="SafeArrayConversion.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">EnableFastChecks</BasicRuntimeChecks>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MinSpace</Optimization>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <TreatWarningAsError />
+    </ClCompile>
+    <ClCompile Include="CDlgCompanyName.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MinSpace</Optimization>
+      <TreatWarningAsError />
+    </ClCompile>
+    <ClCompile Include="CDlgIMAlign.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MinSpace</Optimization>
+      <TreatWarningAsError />
+    </ClCompile>
+    <ClCompile Include="CDlgIMInspect.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Disabled</Optimization>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MinSpace</Optimization>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWarningAsError />
+    </ClCompile>
+    <ClCompile Include="TooltipComboBox.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CompanyNameLineScanner.def" />
+    <None Include="CompanyNameLineScanner.rgs" />
+    <None Include="HowToCreateYourOwnPlugin.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="CompanyNameLineScanner.idl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CompanyNameScanner.rc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OUTDIR);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OUTDIR);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CComCommand.h" />
+    <ClInclude Include="CComCommandInfo.h" />
+    <ClInclude Include="CComCommandInfoImpl.h" />
+    <ClInclude Include="CComCommandParameter.h" />
+    <ClInclude Include="CComCommandParameterEnum.h" />
+    <ClInclude Include="CComCommandParameterEnumImpl.h" />
+    <ClInclude Include="CComCommandParameterInfo.h" />
+    <ClInclude Include="CComCommandParameterInfoImpl.h" />
+    <ClInclude Include="CComMessageFilter.h" />
+    <ClInclude Include="CCompanyNameCmd.h" />
+    <ClInclude Include="CCompanyNameSDKStub.h" />
+    <ClInclude Include="CCompanyNameScanner.h" />
+    <ClInclude Include="CCompanyNameScannerReceiver.h" />
+    <ClInclude Include="CCompanyNameScannerSettings.h" />
+    <ClInclude Include="CDlgIMAlignOptions.h" />
+    <ClInclude Include="CDlgIMInspectOptions.h" />
+    <ClInclude Include="CIMDlgOptionsBase.h" />
+    <ClInclude Include="CDlgSaveAsProfile.h" />
+    <ClInclude Include="CIMPropertyGridCheckBoxProperty.h" />
+    <ClInclude Include="CIMPropertyGridColorProperty.h" />
+    <ClInclude Include="CIMPropertyGridCtrl.h" />
+    <ClInclude Include="CIMPropertyGridProperty.h" />
+    <ClInclude Include="CompanyNameConst.h" />
+    <ClInclude Include="ApplicationUtils.h" />
+    <ClInclude Include="CScanningProfilesUser.h" />
+    <ClInclude Include="CThreadHelper.h" />
+    <ClInclude Include="CTSetting.h" />
+    <ClInclude Include="Diagnostics.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="SafeArrayConversion.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="CDlgCompanyName.h" />
+    <ClInclude Include="CDlgIMAlign.h" />
+    <ClInclude Include="CDlgIMInspect.h" />
+    <ClInclude Include="StrUtil.h" />
+    <ClInclude Include="TooltipComboBox.h" />
+    <ClInclude Include="Types.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

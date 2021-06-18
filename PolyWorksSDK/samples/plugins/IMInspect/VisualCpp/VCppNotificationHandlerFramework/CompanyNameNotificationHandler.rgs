@@ -1,0 +1,26 @@
+HKCR
+{
+	CompanyNameNotificationHandler.CompanyNameNotificationHandlerPlugin.1 = s 'CompanyNameNotificationHandlerPlugin Class'
+	{
+		CLSID = s '{E075341D-ADDE-4838-9F36-A995EE4411A3}'
+	}
+	CompanyNameNotificationHandler.CompanyNameNotificationHandlerPlugin = s 'CompanyNameNotificationHandlerPlugin Class'
+	{
+		CLSID = s '{E075341D-ADDE-4838-9F36-A995EE4411A3}'
+		CurVer = s 'CompanyNameNotificationHandler.CompanyNameNotificationHandlerPlugin.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {E075341D-ADDE-4838-9F36-A995EE4411A3} = s 'CompanyNameNotificationHandlerPlugin Class'
+		{
+			ProgID = s 'CompanyNameNotificationHandler.CompanyNameNotificationHandlerPlugin.1'
+			VersionIndependentProgID = s 'CompanyNameNotificationHandler.CompanyNameNotificationHandlerPlugin'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{A25525AB-7C82-49D3-A9F2-E24E0194C1EB}'
+		}
+	}
+}

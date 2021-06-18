@@ -1,0 +1,41 @@
+// CompanyNamePolygonalModelScanner.idl : IDL source for CompanyNamePolygonalModelScanner.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (CompanyNamePolygonalScanner.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+    [
+        object,
+        uuid(D10E4D18-C9DE-4E69-AB9F-A4FB2697E64F),
+        dual,
+        helpstring("ICompanyNamePolygonalScanner Interface"),
+        pointer_default(unique)
+    ]
+    interface ICompanyNamePolygonalModelScanner : IDispatch
+    {
+    };
+
+[
+    uuid(DF4B9AC1-5A7A-4E53-ACA4-621CE4167372),
+    version(1.0),
+    helpstring("CompanyNamePolygonalModelScanner 1.0 Type Library")
+]
+library COMPANYNAMEPOLYGONALMODELSCANNERLib
+{
+    importlib("stdole32.tlb");
+    importlib("stdole2.tlb");
+    // TODO: Put the correct path to IIMPlugin.tlb here
+    importlib("..\..\..\..\..\include\PolyWorksSDK\COM\IIMPlugin.tlb");
+
+    [
+        uuid(D9234185-7439-4B5A-8F9A-6BCBCBCA4A62),
+        helpstring("CompanyNamePolygonalMOdelScanner Class")
+    ]
+    coclass CompanyNamePolygonalModelScanner
+    {
+        [default] interface ICompanyNamePolygonalModelScanner;
+        interface IIMPlugin;
+    };
+};

@@ -1,0 +1,79 @@
+Steps to create a new plug-in for PolyWorks 2021 using the Visual C++ sample framework
+
+1- In the .rc file, change the values for the "FileDescription" and "ProductName" fields to a more appropriate name
+   indicating what your plug-in does.
+   
+2- In the .idl and .rgs files, replace each of the following UUIDs by new UUIDs generated
+   by either uuidgen.exe or guidgen.exe:
+    2D7DE676-5077-449F-A6EC-F2F37F03CC8F
+    88C956E8-0D64-482F-8E60-DF792D3E2397
+    2460CBD0-4C78-435E-9876-06C1D58FDCB8
+
+3- Change the Additional Include Directories of the vcproj accordingly to your local paths.
+
+4- Search for TODO comments and complete the code with the instructions given there.
+
+5- Once the dll is compiled, copy it to the plugins directory of your Polyworks installation.
+   Ex: C:\Program Files\InnovMetric\PolyWorks MS 2021\plugins
+   Then, run as administrator the RegisterIMCOMServers.bat file found in the \bin directory of the
+   Polyworks installation to register the plug-in (this registration needs to be done only once).
+   
+6- Start the Workspace Manager, look for your plug-in's name in the Tools > Options > Plug-ins section,
+   select it, then click OK to close the Options window.
+   
+7- To check if your plug-in is correctly loaded by IMAlign, PolyWorks|Inspector or PolyWorks|Modeler, check that it appears
+   under the Tools > Plug-ins menu in both softwares.
+   
+Note that it is a good practice to change the UUIDs and re-register your plug-in each time you make significant 
+changes to your plug-in. On systems with multiple versions of PolyWorks installed concurrently, this is particularly
+important to make sure that each version runs the plug-in located in its own plugins directory.
+
+Contact the PolyWorks SDK support team (supportsdk@innovmetric.com) for any question or comment
+
+Changes note:
+
+If you built your own plug-in based on an earlier version of this framework, we recommend that you use
+a file differences tracking tool (such as WinDiff or Araxis Merge) to compare the content of this version
+of the framework with the content of the framework you used to build you plug-in. This way, you'll better
+be able to see what part of the code was changed and decide whether you want to apply similar changes to
+your own plug-in.
+
+Changes in V2021 IR1:
+
+Replacement of raw pointers with CComPtr.
+Code updated to use nullptr instead of NULL when possible for type safety.
+
+Changes in V2019:
+
+Added Visual Studio 2017 support by including .vcxproj project file.
+Visual Studio 2013 support is still available through .vcxproj.VS2013 project file.
+Removed VisualStudio 2010 support by removing .vcxproj.VS2010 file.
+
+Changes in V2018:
+
+Removed VisualStudio 2005 support by removing .vcproj file.
+
+Changes in V2016:
+
+Added Visual Studio 2013 support by including .vcxproj project file.
+Visual Studio 2010 support is still available through .vcxproj.VS2010 project file.
+
+Changes in V12.0.14:
+
+Added Visual Studio 2010 support by including .vcxproj project file.
+
+Changes in V12:
+
+Added usage of the IIMSoundCenter interface.
+Added usage of the IIMMessageCenter interface.
+Removed Visual C++ 6.0 support by removing .dsp project file.
+
+Changes in V11.0.2:
+
+Removed any references to obsolete shared transformation matrix settings.
+Added the IIMUnitsUser interface.
+
+Changes in V11:
+
+Added Visual Studio 2005 support by including .vcproj project file.
+Removed support for obsolete IIMSharedMatrixUser COM interface.

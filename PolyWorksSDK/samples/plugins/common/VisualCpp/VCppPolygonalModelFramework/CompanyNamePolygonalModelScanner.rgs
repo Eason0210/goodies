@@ -1,0 +1,26 @@
+HKCR
+{
+	CompanyNamePolygonalModelScanner.CompanyNamePolygonalModelScanner.1 = s 'CompanyNamePolygonalModelScanner Class'
+	{
+		CLSID = s '{D9234185-7439-4B5A-8F9A-6BCBCBCA4A62}'
+	}
+	CompanyNamePolygonalModelScanner.CompanyNamePolygonalModelScanner = s 'CompanyNamePolygonalModelScanner Class'
+	{
+		CLSID = s '{D9234185-7439-4B5A-8F9A-6BCBCBCA4A62}'
+		CurVer = s 'CompanyNamePolygonalModelScanner.CompanyNamePolygonalModelScanner.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {D9234185-7439-4B5A-8F9A-6BCBCBCA4A62} = s 'CompanyNamePolygonalModelScanner Class'
+		{
+			ProgID = s 'CompanyNamePolygonalModelScanner.CompanyNamePolygonalModelScanner.1'
+			VersionIndependentProgID = s 'CompanyNamePolygonalModelScanner.CompanyNamePolygonalModelScanner'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{DF4B9AC1-5A7A-4E53-ACA4-621CE4167372}'
+		}
+	}
+}

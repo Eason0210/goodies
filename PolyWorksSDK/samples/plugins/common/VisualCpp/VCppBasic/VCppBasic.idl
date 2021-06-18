@@ -1,0 +1,45 @@
+// VCppBasic.idl : IDL source for VCppBasic.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (VCppBasic.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(2D7DE676-5077-449F-A6EC-F2F37F03CC8F),
+		dual,
+		helpstring("IInnovPlugin Interface"),
+		pointer_default(unique)
+	]
+	interface IInnovPlugin : IDispatch
+	{
+	};
+
+[
+	uuid(88C956E8-0D64-482F-8E60-DF792D3E2397),
+	version(1.0),
+	helpstring("VCppBasic 1.0 Type Library")
+]
+library VC6DLLLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+    importlib("..\..\..\..\..\include\PolyWorksSDK\COM\IIMPlugin.tlb");
+
+	[
+		uuid(2460CBD0-4C78-435E-9876-06C1D58FDCB8),
+		helpstring("InnovPlugin Class")
+	]
+	coclass InnovPlugin
+	{
+		[default] interface IInnovPlugin;
+        interface IIMPlugin;
+        interface IIMCommand;
+        interface IIMLanguage;
+        interface IIMProbe;
+        interface IIMSettings;
+        interface IIMUnitsUser;
+	};
+};

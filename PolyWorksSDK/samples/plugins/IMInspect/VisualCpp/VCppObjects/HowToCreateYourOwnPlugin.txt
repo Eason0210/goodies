@@ -1,0 +1,57 @@
+Steps to create a new plug-in for PolyWorks 2021 using the Visual C++ sample framework
+
+1- Change the strings "CompanyName", "COMPANY_NAME" and "COMPANYNAME" by the name of your company everywhere
+   (including all files (*.*) and the file names)
+
+2- In the .rc file, change the values for the "FileDescription" and "ProductName" fields to a more appropriate name
+   indicating what your plug-in does
+
+3- In the .idl and .rgs files, replace each of the following UUIDs by new UUIDs generated
+   by either uuidgen.exe or guidgen.exe:
+    B4093ACA-C420-4af3-9911-62A45D595707
+    2EC88A90-171F-4642-8017-73C12A1492AC
+    50563F65-67BF-461f-A51D-BDADF4AAFA80
+    978AE745-10AA-49a3-90C9-52DB15FBFEBD
+
+4- Change the Additional Include Directories of the vcproj accordingly to your local paths.
+
+5- Search for TODO comments and complete the code with the instructions given there
+
+6- Once the dll is compiled, copy it to the plugins directory of your Polyworks installation.
+   Ex: C:\Program Files\InnovMetric\PolyWorks MS 2021\plugins
+   Then, run as administrator the RegisterIMCOMServers.bat file found in the \bin directory of the
+   Polyworks installation to register the plug-in (this registration needs to be done only once.)
+
+7- Start the Workspace Manager, look for your plug-in's name in the Tools > Options > Plug-ins section,
+   select it, then click OK to close the Options window.
+
+8- To check if your plug-in is correctly loaded by IMAlign or PolyWorks|Inspector, check that it appears
+   under the Tools > Plug-ins menu in both softwares.
+
+Note that it is a good practice to change the UUIDs and re-register your plug-in each time you make significant 
+changes to your plug-in. On systems with multiple versions of PolyWorks installed concurrently, this is particularly
+important to make sure that each version runs the plug-in located in its own plugins directory.
+
+Contact the PolyWorks SDK support team (supportsdk@innovmetric.com) for any question or comment
+
+Changes note:
+
+If you built your own plug-in based on an earlier version of this framework, we recommend that you use
+a file differences tracking tool (such as WinDiff or Araxis Merge) to compare the content of this version
+of the framework with the content of the framework you used to build you plug-in. This way, you'll better
+be able to see what part of the code was changed and decide whether you want to apply similar changes to
+your own plug-in.
+
+Changes in V2021 IR1:
+
+Replacement of raw pointers with CComPtr.
+Code updated to use nullptr instead of NULL when possible for type safety.
+
+Changes in V2019 IR8:
+
+Removed unnecessary AppID registry entries that could cause registry cleaning tools to remove
+all registry entries associated with the plug-in.
+
+Changes in V2016 IR5:
+
+Added support for Diagnostics using the environment variable PW_PLUGIN_DIAGNOSTICS.

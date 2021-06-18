@@ -1,0 +1,254 @@
+Steps to create a new Line Scanner plug-in for PolyWorks 2021 using the Visual C++ Line Scanner Framework
+
+1- Change the strings "CompanyName" and "COMPANYNAME" by the name of your company everywhere
+   (including all files (*.*) and the file names)
+
+2- In the .rc file, change the values for the "FileDescription" and "ProductName" fields to a more appropriate name
+   if desired.
+
+3- In the .idl and .rgs files, replace each of the following UUIDs by new UUIDs generated
+   by either uuidgen.exe or guidgen.exe:
+    544345f9-c58a-446b-a1ce-90ee860ef9c9
+    81291108-ce0f-4476-b067-260ceb14bcfd
+    cce11dbd-4929-4d8c-b535-6b332d694319
+
+4- In Visual Studio, go in the "Project Properties", for All Configurations, in the C/C++ section, the General category,
+   and change the "Additional include directories" option to use the right path to the SDK's include directory.
+
+5- Search for TODO comments and complete the code with the instructions given there
+   (don't forget to change the include path for the IIMPlugin.tlb in the idl file)
+
+6- Note that this framework sample simulates line scan data. "TODO: Remove" tokens have been 
+   placed to indicate where to remove simulator code.
+
+   Also, note that there is one thread that communicates with the scanner, while a second one
+   sends scan lines to the host PolyWorks application. This is done to optimize performances.
+
+   Finally, note that the dialog resources are already included. If you wish to use them,
+   you can probably reuse a good part of the CDlg... files, but you'll see that most of the
+   TODOs are in those files since all of InnovMetric's own GUI management code was removed.
+   Even if you build your own dialogs from scratch, you might want to have a look at the CDlg...
+   files to learn a few tricks about how our dialogs work.
+
+7- Once the dll is compiled, copy it to the plugins directory of your Polyworks installation.
+   Ex: C:\Program Files\InnovMetric\PolyWorks MS 2021\plugins
+   Then, run as administrator the RegisterIMCOMServers.bat file found in the \bin directory of the
+   Polyworks installation to register the plug-in (this registration needs to be done only once.)
+
+8- Start the Workspace Manager, look for your plug-in's name in the Tools > Options > Plug-ins section,
+   select it, then click OK to close the Options window.
+
+9- To check if your Line Scanner plug-in is correctly loaded by IMAlign or PolyWorks|Inspector, check that it appears
+   under the Tools > Plug-ins menu in both softwares.
+
+Note that it is a good practice to change the UUIDs and re-register your plug-in each time you make significant 
+changes to your plug-in. On systems with multiple versions of PolyWorks installed concurrently, this is particularly
+important to make sure that each version runs the plug-in located in its own plugins directory.
+
+Contact the PolyWorks SDK support team (supportsdk@innovmetric.com) for any question or comment
+
+Changes note:
+
+If you built your own plug-in based on an earlier version of this framework, we recommend that you use
+a file differences tracking tool (such as WinDiff or Araxis Merge) to compare the content of this version
+of the framework with the content of the framework you used to build you plug-in. This way, you'll better
+be able to see what part of the code was changed and decide whether you want to apply similar changes to
+your own plug-in.
+
+Changes in V2021 IR1:
+
+Replacement of raw pointers with CComPtr.
+Code updated to use nullptr instead of NULL when possible for type safety.
+Corrected a bug where code that should be executed was written inside an assert.
+Traduced some comments that were written in French.
+Updated transformation matrices to use the convention written in the comments (OpenGL convention).
+Added additionnal information to further clarify which rotation matrix was used from Craig's reference book.
+Corrected some notation errors found (theta and phi swapped from OpenGL convention, X-Axis was named Z-Axis).
+
+Changes in V2019:
+
+Added Visual Studio 2017 support by including .vcxproj project file.
+Visual Studio 2013 support is still available through .vcxproj.VS2013 project file.
+Removed VisualStudio 2010 support by removing .vcxproj.VS2010 file.
+
+Changes in V2018 IR5:
+
+Removed the Smooth scan passes from the Filtering section. This obsolete feature has been replaced by the
+Smooth option in the Real-Time Quality Meshing > Polygonal Models section.
+
+Changes in V2018:
+
+Removed VisualStudio 2005 support by removing .vcproj file.
+
+Changes in V2017 :
+Renamed the EScanTypes enum value E_SCAN_TYPE_BOUNDARY for E_SCAN_TYPE_SHARP_EDGE.
+Renamed the EScanTypes enum value E_SCAN_TYPE_SURFACE_AND_HOLE_BOUNDARY for E_SCAN_TYPE_SURFACE_AND_BOUNDARY.
+
+Changes in V2016 IR9:
+
+Added the IIMScanner5 interface.
+
+Added the IIMSettings2 interface and usage of the IIMSettingsRepository2 interface.
+
+Removed the "Project" parameter when creating settings as this type of settings is not currently supported when using
+the IIMSettings2 interface.
+
+Changes in V2016 IR5:
+
+Added support for Diagnostics using the environment variable PW_PLUGIN_DIAGNOSTICS.
+
+Changes in V2016 IR3:
+
+Centralize the cookies management in the function GITRevokeInterfaceFromGlobal.
+
+Use a line scan cookie as a member variable instead of a global variable.
+
+Changes in V2016:
+
+Added Visual Studio 2013 support by including .vcxproj project file.
+Visual Studio 2010 support is still available through .vcxproj.VS2010 project file.
+
+Changed window title from "CompanyName Scanner" to "Scan" in CompanyNameScanner.rc.
+
+Changes in V2015 IR11:
+
+Fixed a buffer allocation issue in the CommunicationThreadProc of the file CCompanyNameSDKStub.cpp.
+The line containing the unnecessary pCompanyNameSDKStub->m_pReceiver->m_Data.resize was removed.
+
+Changes in V2015 IR5:
+
+Added the IIMScanner4 interface.
+
+Changes in V2014 IR15:
+
+Redesigned the real-time quality meshing process to reflect changes made in PolyWorks|Inspector.
+It is now an option to produce either a polygonal model (and finalize the mesh, as before) or a mesh-based point cloud
+(without finalizing the mesh) when a real-time quality meshing scanning session is completed.
+A few MSCL commands have been completely removed as they are not working anymore, while others have been renamed.
+
+Changes in V2014 IR7:
+
+Fixed a units conversion problem in the ValueDoubleSynchFromApp function.
+
+Changes in V2014 IR6:
+
+Added support for scanning profiles by implementing the IIMScanningProfilesUser interface.
+
+Removed the SettingsReload and SettingsSave methods from the CCompanyNameScannerSettings class.
+Settings should no longer be reloaded when opening the dialog box to avoid issues with scanning profiles,
+and settings are now always automatically saved when exiting the host application.
+
+Added the IIMLineScanner2 interface.
+
+Changes in V2014:
+
+Added settings and code for activating the new real-time meshing in PolyWorks|Inspector.
+
+Added the IIMScanner3 interface.
+
+Changes in V12.1.13:
+
+Changed how the Global Interface Table (GIT) is used to make sure to always obtain and release the pointer to the table.
+
+Changes in V12.1:
+
+Changed the CComMessageFilter class to always retry when application tells the plug-in to retry a COM call.
+
+Added the IIMScanningObjectsUser interface.
+
+Added CCompanyNameScanner::ScanningObjectsSet to handle scan object names and removed references to get/set scan name
+methods in the plug-in settings.
+
+ScanNameDefaultGet and ScanNameSet are now obsolete.
+
+Changed the CCompanyNameScanner::ScanningEnd and CCompanyNameScannerReceiver::DoAcquisitionEnd methods
+to make sure to stop the data-sending thread (ThreadTwo) before calling IIMLineScan::TransferEnd.
+
+Changed CCompanyNameScannerReceiver::ConflictingPluginsDisconnect to remove mention of conflicting
+scanning plug-ins, since only one scanning plug-in can now be connected at a given time.
+
+Changes in V12.0.14:
+
+Added Visual Studio 2010 support by including .vcxproj project file.
+
+Added the IIMScanner2 interface.
+
+Changed the ScanStart and ScanEnd methods for the dialogs so they now call the DIGITIZE DEVICE SCAN START and
+DIGITIZE DEVICE SCAN END commands.
+
+Removed the DIGITIZE DEVICE COMPANYNAME SCANNER and DIGITIZE DEVICE COMPANYNAME SCANNER CONNECT commands
+as they are no longer required. Some of the code from the CONNECT command has been moved to ScanningConnectionInit.
+
+Changes in V12.0.12:
+
+Added the IIMScanner and IIMLineScanner interfaces.
+
+Changes in V12.0.9:
+
+Changed the CCompanyNameScannerReceiver::CursorSend method to correctly take into account scan lines with only one point.
+
+Changes in V12:
+
+Added usage of the IIMMessageCenter interface.
+Removed Visual C++ 6.0 support by removing .dsp project file.
+
+Changes in V11.0.14:
+
+Added settings for the new automatic viewpoint strategy. 
+
+Changes in V11.0.2:
+
+Removed any references to obsolete shared transformation matrix settings.
+Added the IIMUnitsUser interface.
+
+Changes in V11.0.1:
+
+Added Visual Studio 2005 support by including .vcproj project file.
+Removed support for obsolete IIMSharedMatrixUser COM interface.
+COM classes IDs (CLSID_*) are now declared in a different *.h file and defined in a different *_i.c file (e.g. IMInspect.h/_i.c).
+The application COM interface file no longer imports (includes) unnecessary interfaces for that file (additional #includes will be necessary).
+
+Changes in V11:
+
+Added Visual Studio 2005 support by including .vcproj project file.
+Removed support for obsolete IIMSharedMatrixUser COM interface.
+
+Changes in V10.1.8:
+
+Fixed a logical error in CCompanyNameScannerReceiver::DoPassEnd that prevented ViewpointSet from being
+called if any one value of the digitizing vector was zero.
+
+Changes in V10.1.6:
+
+Added CComCommandParameter.cpp to the .dsp file.
+Cleaned up some thread handling calls, mainly so that ThreadTwo is now only launched in ConnectListener and only killed in DisconnectListener.
+
+Changes in V10.1:
+
+IMPORTANT NOTICE for PolyWorks 10.1: A problem has been found with the way threads were created in our previous C++ plug-in samples
+(up to and including all 10.0.x samples). The functions that were used with the CreateThread method did
+not respect the standard signature for such functions (i.e.: DWORD __stdcall FnName( void* )), missing the
+critically important __stdcall instruction. Please check and update your plug-ins if needed in order to make
+them fully compatible with PolyWorks V10.1. Plug-ins that are not conform might cause PolyWorks to crash
+unexpectedly. The samples included with PolyWorks V10.1 are now correct.
+
+When using secondary threads to make COM calls, make sure you use a message filter (see IMessageFilter in MSDN),
+such as the CComMessageFilter now included in this sample. This will prevents calls from being rejected and lost.
+
+In CCompanyNameScanner::Unload, waiting (with WaitForSingleObject) for the end of the dialog thread (g_companyNameThreadHandle)
+replaces waiting for an event (previously g_hCompanyNameDlgPoppedDownEvent).
+
+In order to avoid conflict while accessing hardware or software resources that might be used by
+another plug-in, it is now recommended to send commands (if any exist) via the IIMCommandCenter
+interface in order to close and disconnect any existing plug-in that you know might use the
+same resources before attempting to connect to those resources in your plug-in.
+For example, if you have a scanning plug-in that uses the same tracking system as an existing probing plug-in,
+then you might want to call "PROBE DEVICE CONNECT ("Off")" as one of the very first steps when attempting
+to connect to your hardware or software resources, just to be sure.
+If a potentially conflicting plug-in is another scanning plug-in, then you might want to call any related
+"DIGITIZE DEVICE [...] CONNECT( "Off" )" command instead.
+See CCompanyNameScanner::Execute and CCompanyNameScannerReceiver::ConflictingPluginsDisconnect for details.
+
+Added support for the IIMCommandEnum interface and added a CONNECT ("On"/"Off") sample command in
+addition to the existing command that opens the GUI.
+

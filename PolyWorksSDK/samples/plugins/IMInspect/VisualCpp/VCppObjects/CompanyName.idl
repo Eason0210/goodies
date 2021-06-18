@@ -1,0 +1,40 @@
+// CompanyName.idl : IDL source for CompanyName
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (CompanyName.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(B4093ACA-C420-4af3-9911-62A45D595707),
+	dual,
+	nonextensible,
+	helpstring("ICompanyNameComPlugin Interface"),
+	pointer_default(unique)
+]
+interface ICompanyNameComPlugin : IDispatch{
+};
+[
+	uuid(2EC88A90-171F-4642-8017-73C12A1492AC),
+	version(1.0),
+	helpstring("CompanyName 1.0 Type Library")
+]
+library CompanyNameLib
+{
+    importlib("stdole2.tlb");
+    importlib("IIMPlugin.tlb");
+
+	[
+		uuid(50563F65-67BF-461f-A51D-BDADF4AAFA80),
+		helpstring("CompanyNameComPlugin Class")
+	]
+	coclass CompanyNameComPlugin
+	{
+        [default] interface ICompanyNameComPlugin;
+        interface IIMPlugin;
+        interface IIMCommandEnum;
+	};
+};

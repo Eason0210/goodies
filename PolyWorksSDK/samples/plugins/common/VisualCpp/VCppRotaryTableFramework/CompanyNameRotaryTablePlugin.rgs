@@ -1,0 +1,26 @@
+HKCR
+{
+	CompanyNameRotaryTable.CompanyNameRotaryTablePlugin.1 = s 'CompanyNameRotaryTablePlugin Class'
+	{
+		CLSID = s '{F2903F3C-2F69-4D12-8B0D-95B27091678B}'
+	}
+	CompanyNameRotaryTable.CompanyNameRotaryTablePlugin = s 'CompanyNameRotaryTablePlugin Class'
+	{
+		CLSID = s '{F2903F3C-2F69-4D12-8B0D-95B27091678B}'
+		CurVer = s 'CompanyNameRotaryTable.CompanyNameRotaryTablePlugin.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {F2903F3C-2F69-4D12-8B0D-95B27091678B} = s 'CompanyNameRotaryTablePlugin Class'
+		{
+			ProgID = s 'CompanyNameRotaryTable.CompanyNameRotaryTablePlugin.1'
+			VersionIndependentProgID = s 'CompanyNameRotaryTable.CompanyNameRotaryTablePlugin'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{EE37024F-2F57-4B30-894A-8F0488737E3E}'
+		}
+	}
+}

@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F505EA4B-63A4-4B8D-8FAD-B11CD3EEAE0C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>VBNet3DSceneRendering</RootNamespace>
+    <AssemblyName>VBNet3DSceneRendering</AssemblyName>
+    <MyType>Windows</MyType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>VBNet3DSceneRendering.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>VBNet3DSceneRendering.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.IMInspectLib, Version=12.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\plugins\Interop.IMInspectLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.IMPluginLib, Version=12.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\plugins\Interop.IMPluginLib.dll</HintPath>
+    </Reference>
+    <Reference Include="PolyWorksSDKManaged, Version=1.0.4374.19565, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\plugins\PolyWorksSDKManaged.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="COM_SDK\CCompanyNameCommands.vb" />
+    <Compile Include="COM_SDK\CCompanyNameComPlugin.vb" />
+    <Compile Include="COM_SDK\Util\CComCommand.vb" />
+    <Compile Include="COM_SDK\Util\CComCommandInfo.vb" />
+    <Compile Include="COM_SDK\Util\CComCommandInfoImpl.vb" />
+    <Compile Include="COM_SDK\Util\CComCommandParameter.vb" />
+    <Compile Include="COM_SDK\Util\CComCommandParameterEnum.vb" />
+    <Compile Include="COM_SDK\Util\CComCommandParameterEnumImpl.vb" />
+    <Compile Include="COM_SDK\Util\CComCommandParameterInfo.vb" />
+    <Compile Include="COM_SDK\Util\CComCommandParameterInfoImpl.vb" />
+    <Compile Include="COM_SDK\Util\StrUtil.vb" />
+    <Compile Include="Managed_SDK\CCompanyNameManagedPlugin.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Managed_SDK\CDrawNodePoints.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Managed_SDK\CDrawNodePolyline2D.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Managed_SDK\CDrawNodePolyline3D.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Managed_SDK\CDrawNodeText.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Managed_SDK\CDrawNodeTriangles.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.vb" />
+    <Compile Include="Properties\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HowToCreateYourOwnPlugin.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

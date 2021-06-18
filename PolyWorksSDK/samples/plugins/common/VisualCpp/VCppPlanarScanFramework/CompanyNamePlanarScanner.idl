@@ -1,0 +1,41 @@
+// CompanyNamePlanarScanner.idl : IDL source for CompanyNamePlanarScanner.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (CompanyNamePlanarScanner.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+    [
+        object,
+        uuid(7BB7B126-E8F4-4788-B22E-67BA5E7D1AA8),
+        dual,
+        helpstring("ICompanyNamePlanarScanner Interface"),
+        pointer_default(unique)
+    ]
+    interface ICompanyNamePlanarScanner : IDispatch
+    {
+    };
+
+[
+    uuid(9E43CEE7-CF61-4051-9E46-54FFB6BBF747),
+    version(1.0),
+    helpstring("CompanyNamePlanarScanner 1.0 Type Library")
+]
+library COMPANYNAMEPLANARSCANNERLib
+{
+    importlib("stdole32.tlb");
+    importlib("stdole2.tlb");
+    // TODO: Put the correct path to IIMPlugin.tlb here
+    importlib("..\..\..\..\..\include\PolyWorksSDK\COM\IIMPlugin.tlb");
+
+    [
+        uuid(987FEFE5-EF58-4C10-B5DC-2C2A103A8C71),
+        helpstring("CompanyNamePlanarScanner Class")
+    ]
+    coclass CompanyNamePlanarScanner
+    {
+        [default] interface ICompanyNamePlanarScanner;
+        interface IIMPlugin;
+    };
+};

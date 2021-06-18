@@ -1,0 +1,26 @@
+HKCR
+{
+	CompanyName.CompanyNameObject.1 = s 'CompanyNameObject Class'
+	{
+		CLSID = s '{50563F65-67BF-461f-A51D-BDADF4AAFA80}'
+	}
+	CompanyName.CompanyNameObject = s 'CompanyNameObject Class'
+	{
+		CLSID = s '{50563F65-67BF-461f-A51D-BDADF4AAFA80}'
+		CurVer = s 'CompanyName.CompanyNameObject.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {50563F65-67BF-461f-A51D-BDADF4AAFA80} = s 'CompanyNameObject Class'
+		{
+			ProgID = s 'CompanyName.CompanyNameObject.1'
+			VersionIndependentProgID = s 'CompanyName.CompanyNameObject'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{2EC88A90-171F-4642-8017-73C12A1492AC}'
+		}
+	}
+}

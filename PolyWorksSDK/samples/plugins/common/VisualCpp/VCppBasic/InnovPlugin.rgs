@@ -1,0 +1,26 @@
+HKCR
+{
+	VCppBasic.InnovPlugin.1 = s 'InnovPlugin Class'
+	{
+		CLSID = s '{2460CBD0-4C78-435E-9876-06C1D58FDCB8}'
+	}
+	VCppBasic.InnovPlugin = s 'InnovPlugin Class'
+	{
+		CLSID = s '{2460CBD0-4C78-435E-9876-06C1D58FDCB8}'
+		CurVer = s 'VCppBasic.InnovPlugin.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {2460CBD0-4C78-435E-9876-06C1D58FDCB8} = s 'InnovPlugin Class'
+		{
+			ProgID = s 'VCppBasic.InnovPlugin.1'
+			VersionIndependentProgID = s 'VCppBasic.InnovPlugin'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{88C956E8-0D64-482F-8E60-DF792D3E2397}'
+		}
+	}
+}

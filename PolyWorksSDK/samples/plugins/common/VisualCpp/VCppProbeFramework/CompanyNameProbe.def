@@ -1,0 +1,9 @@
+; CompanyNameProbe.def : Declares the module parameters.
+
+LIBRARY      "CompanyNameProbe.DLL"
+
+EXPORTS
+	DllCanUnloadNow     PRIVATE
+	DllGetClassObject   PRIVATE
+	DllRegisterServer   PRIVATE
+	DllUnregisterServer	PRIVATE

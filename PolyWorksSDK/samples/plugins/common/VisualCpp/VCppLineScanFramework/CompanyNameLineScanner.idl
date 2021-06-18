@@ -1,0 +1,41 @@
+// CompanyNameLineScanner.idl : IDL source for CompanyNameLineScanner.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (CompanyNameLineScanner.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+    [
+        object,
+        uuid(544345f9-c58a-446b-a1ce-90ee860ef9c9),
+        dual,
+        helpstring("ICompanyNameLineScanner Interface"),
+        pointer_default(unique)
+    ]
+    interface ICompanyNameLineScanner : IDispatch
+    {
+    };
+
+[
+    uuid(81291108-ce0f-4476-b067-260ceb14bcfd),
+    version(1.0),
+    helpstring("CompanyNameLineScanner 1.0 Type Library")
+]
+library COMPANYNAMELINESCANNERLib
+{
+    importlib("stdole32.tlb");
+    importlib("stdole2.tlb");
+    // TODO: Put the correct path to IIMPlugin.tlb here
+    importlib("..\..\..\..\..\include\PolyWorksSDK\COM\IIMPlugin.tlb");
+
+    [
+        uuid(cce11dbd-4929-4d8c-b535-6b332d694319),
+        helpstring("CompanyNameLineScanner Class")
+    ]
+    coclass CompanyNameLineScanner
+    {
+        [default] interface ICompanyNameLineScanner;
+        interface IIMPlugin;
+    };
+};

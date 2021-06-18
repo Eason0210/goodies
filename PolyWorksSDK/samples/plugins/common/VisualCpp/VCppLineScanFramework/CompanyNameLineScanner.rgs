@@ -1,0 +1,26 @@
+HKCR
+{
+	CompanyNameLineScanner.CompanyNameLineScanner.1 = s 'CompanyNameLineScanner Class'
+	{
+		CLSID = s '{cce11dbd-4929-4d8c-b535-6b332d694319}'
+	}
+	CompanyNameLineScanner.CompanyNameLineScanner = s 'CompanyNameLineScanner Class'
+	{
+		CLSID = s '{cce11dbd-4929-4d8c-b535-6b332d694319}'
+		CurVer = s 'CompanyNameLineScanner.CompanyNameLineScanner.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {cce11dbd-4929-4d8c-b535-6b332d694319} = s 'CompanyNameLineScanner Class'
+		{
+			ProgID = s 'CompanyNameLineScanner.CompanyNameLineScanner.1'
+			VersionIndependentProgID = s 'CompanyNameLineScanner.CompanyNameLineScanner'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{81291108-ce0f-4476-b067-260ceb14bcfd}'
+		}
+	}
+}

@@ -1,0 +1,239 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""winres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "1 TYPELIB ""CompanyNamePlanarScanner.tlb""\r\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "CompanyName Planar Scanner"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "CompanyNamePlanarScanner"
+            VALUE "LegalCopyright", "Copyright 2005"
+            VALUE "OriginalFilename", "CompanyNamePlanarScanner.DLL"
+            VALUE "ProductName", "CompanyName Planar Scanner"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral (Sys. Default) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEUSD)
+LANGUAGE LANG_NEUTRAL, SUBLANG_SYS_DEFAULT
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// REGISTRY
+//
+
+IDR_COMPANYNAMESCANNER  REGISTRY                "CompanyNamePlanarScanner.rgs"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_COMPANYNAME_ALIGN DIALOGEX 0, 0, 159, 90
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CONTEXTHELP | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Scan"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Scan name:",IDC_STATIC,9,7,65,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_SCAN_NAME,79,7,73,14,ES_AUTOHSCROLL
+    LTEXT           "Number of points:",IDC_STATIC,8,26,65,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_NUMBER_OF_POINTS,79,26,73,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "Options",IDC_BUTTON_OPTIONS,102,45,50,14
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,9,64,143,1
+    DEFPUSHBUTTON   "Start Scan",IDOK,7,69,50,14
+    PUSHBUTTON      "Close",IDCANCEL,102,69,50,14
+END
+
+IDD_COMPANYNAME_INSPECT DIALOGEX 0, 0, 159, 144
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CONTEXTHELP | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Scan"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Data object",IDC_STATIC,7,7,65,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,18,145,1
+    LTEXT           "Name:",IDC_STATIC,7,22,22,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_DATA_OBJECT_NAME,64,23,88,14,ES_AUTOHSCROLL
+    LTEXT           "Structure:",IDC_STATIC,7,41,53,8
+    CONTROL         "Point Cloud",IDC_RADIO_POINT_CLOUD,"Button",BS_AUTORADIOBUTTON | WS_GROUP,19,50,85,12
+    CONTROL         "Polygonal Model",IDC_RADIO_POLYGONAL_MODEL,"Button",BS_AUTORADIOBUTTON,19,62,85,12
+    LTEXT           "Parameters",IDC_STATIC,9,78,65,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,89,145,1
+    CONTROL         "Automatic viewpoint",IDC_CHECK_USE_AUTOMATIC_VIEWPOINT,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,94,82,10
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,121,144,1
+    DEFPUSHBUTTON   "Start Scan",IDOK,6,126,50,14
+    PUSHBUTTON      "Close",IDCANCEL,102,126,50,14
+    CONTROL         "Create new device position on scan",IDC_CHECK_CREATE_NEW_DEVICE_POSITION_ON_SCAN_START,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,108,123,10
+END
+
+IDD_OPTIONS_ALIGN DIALOGEX 0, 0, 149, 100
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CONTEXTHELP | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Planar Scan Options"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Surface scan",IDC_STATIC,7,7,65,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,18,135,1
+    LTEXT           "Max edge length:",IDC_STATIC,7,22,65,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_MAX_EDGE_LENGTH,77,22,65,14,ES_AUTOHSCROLL
+    LTEXT           "Interpolation step:",IDC_STATIC,7,38,65,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_INTERPOLATION_STEP,77,38,65,14,ES_AUTOHSCROLL
+    LTEXT           "Max angle:",IDC_STATIC,7,54,65,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_MAX_ANGLE,77,54,65,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,73,135,1
+    DEFPUSHBUTTON   "OK",IDOK,37,79,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,92,79,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_COMPANYNAME_ALIGN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 152
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+
+    IDD_COMPANYNAME_INSPECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 152
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 140
+    END
+
+    IDD_OPTIONS_ALIGN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 142
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 93
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_COMPANYNAME_ALIGN AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_COMPANYNAME_INSPECT AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_PROJNAME            "CompanyNameScanner"
+END
+
+#endif    // Neutral (Sys. Default) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+1 TYPELIB "CompanyNamePlanarScanner.tlb"
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

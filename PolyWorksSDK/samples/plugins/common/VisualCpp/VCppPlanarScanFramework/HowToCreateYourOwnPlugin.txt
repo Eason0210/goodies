@@ -1,0 +1,62 @@
+Steps to create a new Planar Scanner plug-in for PolyWorks 2021 using the Visual C++ Planar Scanner Framework
+
+1- Change the strings "CompanyName" and "COMPANYNAME" by the name of your company everywhere
+   (including all files (*.*) and the file names)
+
+2- In the .rc file, change the values for the "FileDescription" and "ProductName" fields to a more appropriate name
+   if desired.
+
+3- In the .idl and .rgs files, replace each of the following UUIDs by new UUIDs generated
+   by either uuidgen.exe or guidgen.exe:
+	7BB7B126-E8F4-4788-B22E-67BA5E7D1AA8
+	9E43CEE7-CF61-4051-9E46-54FFB6BBF747
+	987FEFE5-EF58-4C10-B5DC-2C2A103A8C71
+
+4- In Visual Studio, go in the "Project Properties", for All Configurations, in the C/C++ section, the General category,
+   and change the "Additional include directories" option to use the right path to the SDK's include directory.
+
+5- Search for TODO comments and complete the code with the instructions given there
+   (don't forget to change the include path for the IIMPlugin.tlb in the idl file)
+
+6- Note that this framework sample simulates scan data. "TODO: Remove" tokens have been 
+   placed to indicate where to remove simulator code.
+
+   Also, note that there is one thread that communicates with the scanner, while a second one
+   sends scan data to the host PolyWorks application. This is done to optimize performances.
+
+   Finally, note that the dialog resources are already included. If you wish to use them,
+   you can probably reuse a good part of the CDlg... files, but you'll see that most of the
+   TODOs are in those files since all of InnovMetric's own GUI management code was removed.
+   Even if you build your own dialogs from scratch, you might want to have a look at the CDlg...
+   files to learn a few tricks about how our dialogs work.
+
+7- Once the dll is compiled, copy it to the plugins directory of your Polyworks installation.
+   Ex: C:\Program Files\InnovMetric\PolyWorks MS 2021\plugins
+   Then, run as administrator the RegisterIMCOMServers.bat file found in the \bin directory of the
+   Polyworks installation to register the plug-in (this registration needs to be done only once.)
+
+8- Start the Workspace Manager, look for your plug-in's name in the Tools > Options > Plug-ins section,
+   select it, then click OK to close the Options window.
+
+9- To check if your Planar Scanner plug-in is correctly loaded by IMAlign or PolyWorks|Inspector, check that it appears
+   under the Tools > Plug-ins menu in both softwares.
+
+Note that it is a good practice to change the UUIDs and re-register your plug-in each time you make significant 
+changes to your plug-in. On systems with multiple versions of PolyWorks installed concurrently, this is particularly
+important to make sure that each version runs the plug-in located in its own plugins directory.
+
+Contact the PolyWorks SDK support team (supportsdk@innovmetric.com) for any question or comment
+
+Changes note:
+
+If you built your own plug-in based on an earlier version of this framework, we recommend that you use
+a file differences tracking tool (such as WinDiff or Araxis Merge) to compare the content of this version
+of the framework with the content of the framework you used to build you plug-in. This way, you'll better
+be able to see what part of the code was changed and decide whether you want to apply similar changes to
+your own plug-in.
+
+Changes in V2021 IR1:
+
+Replacement of raw pointers with CComPtr.
+Code updated to use nullptr instead of NULL when possible for type safety.
+

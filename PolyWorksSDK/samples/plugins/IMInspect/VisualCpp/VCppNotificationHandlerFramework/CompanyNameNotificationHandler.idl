@@ -1,0 +1,43 @@
+// CompanyNameNotificationHandler.idl : IDL source for CompanyNameNotificationHandler.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (CompanyNameNotificationHandler.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+    [
+        object,
+        uuid(B09CB2AC-4B93-4839-9662-C9B451BCDB25),
+        dual,
+        nonextensible,
+        helpstring("ICompanyNameNotificationHandlerPlugin Interface"),
+        pointer_default(unique)
+    ]
+    interface ICompanyNameNotificationHandlerPlugin : IDispatch
+    {
+    };
+
+[
+    uuid(A25525AB-7C82-49D3-A9F2-E24E0194C1EB),
+    version(1.0),
+    helpstring("CompanyNameNotificationHandler 1.0 Type Library")
+]
+library COMPANYNAMENOTIFICATIONHANDLERLib
+{
+    importlib("stdole32.tlb");
+    importlib("stdole2.tlb");
+    // TODO: Put the correct path to IIMPlugin.tlb here
+    importlib("..\..\..\..\..\include\PolyWorksSDK\COM\IIMPlugin.tlb");
+
+
+    [
+        uuid(E075341D-ADDE-4838-9F36-A995EE4411A3),
+        helpstring("CompanyNameNotificationHandlerPlugin Class")
+    ]
+    coclass CompanyNameNotificationHandlerPlugin
+    {
+        [default] interface ICompanyNameNotificationHandlerPlugin;
+        interface IIMPlugin;
+    };
+};

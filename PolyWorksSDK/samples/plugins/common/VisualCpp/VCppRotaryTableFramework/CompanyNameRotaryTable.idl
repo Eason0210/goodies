@@ -1,0 +1,42 @@
+// CompanyNameRotaryTable.idl : IDL source for CompanyNameRotaryTable.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (CompanyNameRotaryTable.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+    [
+        object,
+        uuid(4E920F64-B8E2-4447-A0CF-820C17777A08),
+        dual,
+        helpstring("ICompanyNameRotaryTablePlugin Interface"),
+        pointer_default(unique)
+    ]
+    interface ICompanyNameRotaryTablePlugin : IDispatch
+    {
+    };
+
+[
+    uuid(EE37024F-2F57-4B30-894A-8F0488737E3E),
+    version(1.0),
+    helpstring("CompanyNameRotaryTable 1.0 Type Library")
+]
+library COMPANYNAMEROTARYTABLELib
+{
+    importlib("stdole32.tlb");
+    importlib("stdole2.tlb");
+    // TODO: Put the correct path to IIMPlugin.tlb here
+    importlib("..\..\..\..\..\include\PolyWorksSDK\COM\IIMPlugin.tlb");
+
+
+    [
+        uuid(F2903F3C-2F69-4D12-8B0D-95B27091678B),
+        helpstring("CompanyNameRotaryTablePlugin Class")
+    ]
+    coclass CompanyNameRotaryTablePlugin
+    {
+        [default] interface ICompanyNameRotaryTablePlugin;
+        interface IIMPlugin;
+    };
+};

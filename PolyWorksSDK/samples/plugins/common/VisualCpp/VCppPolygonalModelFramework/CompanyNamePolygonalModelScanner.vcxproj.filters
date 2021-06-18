@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="ApplicationUtils.cpp">
+      <Filter>Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="CComMessageFilter.cpp">
+      <Filter>Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="CCompanyNameProxy.cpp" />
+    <ClCompile Include="CCompanyNameScanner.cpp" />
+    <ClCompile Include="CCompanyNameScannerSettings.cpp" />
+    <ClCompile Include="CCompanyNameSDK.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="CDlgCompanyName.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="CMessageOnlyWindow.cpp">
+      <Filter>Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="CompanyNameConst.cpp" />
+    <ClCompile Include="CompanyNameScanner.cpp" />
+    <ClCompile Include="CPolygonalModel.cpp" />
+    <ClCompile Include="CThreadHelper.cpp">
+      <Filter>Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="DataGenerator.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ApplicationUtils.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="CComMessageFilter.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="CCompanyNameProxy.h" />
+    <ClInclude Include="CCompanyNameScanner.h" />
+    <ClInclude Include="CCompanyNameScannerSettings.h" />
+    <ClInclude Include="CCompanyNameSDK.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CDlgCompanyName.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="CMessageOnlyWindow.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="CompanyNameConst.h" />
+    <ClInclude Include="CPolygonalModel.h" />
+    <ClInclude Include="CThreadHelper.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="CTSetting.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="DataGenerator.h" />
+    <ClInclude Include="ICompanyNameScanner.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="Types.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CompanyNameScanner.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="CompanyNamePolygonalModelScanner.idl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CompanyNamePolygonalModelScanner.def" />
+    <None Include="CompanyNamePolygonalModelScanner.rgs" />
+    <None Include="HowToCreateYourOwnPlugin.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{92f9aaa7-c77a-4137-ad30-7a74aa3f8e0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK">
+      <UniqueIdentifier>{d5fc0721-623d-4c73-a759-8afcd4961677}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shared">
+      <UniqueIdentifier>{461b524c-cca6-4343-a90c-d6539b14a1c0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

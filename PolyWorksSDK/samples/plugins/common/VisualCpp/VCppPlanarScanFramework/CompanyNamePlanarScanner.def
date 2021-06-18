@@ -1,0 +1,9 @@
+; CompanyNamePlanarScanner.def : Declares the module parameters.
+
+LIBRARY      "CompanyNamePlanarScanner.DLL"
+
+EXPORTS
+	DllCanUnloadNow     PRIVATE
+	DllGetClassObject   PRIVATE
+	DllRegisterServer   PRIVATE
+	DllUnregisterServer	PRIVATE

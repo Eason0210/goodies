@@ -1,0 +1,312 @@
+Steps to create a new Probe plug-in for PolyWorks 2021 using the Visual C++ Probe Framework
+
+1- Change the strings "CompanyName" and "COMPANYNAME" by the name of your company everywhere
+   (including all files (*.*) and the file names)
+
+2- In the .rc file, change the values for the "FileDescription" and "ProductName" fields to a more appropriate name,
+   such as "CompanyName Arm", "CompanyName Laser Tracker" or "CompanyName Optical Tracker"
+
+3- In the .idl and .rgs files, replace each of the following UUIDs by new UUIDs generated
+   by either uuidgen.exe or guidgen.exe:
+    9491108D-561A-4565-81A5-5E5216915AFC
+    6B07E974-5F3F-4E19-8991-212850B33B47
+    EC2CE725-CD92-4174-81C1-58C51292D9D0
+
+4- In Visual Studio, go in the "Project Properties", for All Configurations, in the C/C++ section, the General category,
+   and change the "Additional include directories" option to use the right path to the SDK's include directory.
+
+5- Search for TODO comments and complete the code with the instructions given there
+   (don't forget to change the include path for the IIMPlugin.tlb in the idl file)
+
+6- Note that this sample code assumes that the probing device has two buttons (one for the point acquisition and
+   one to end the acquisition), that the compensation is done according to the direction of the probe when the first
+   point is taken, and that it supports three modes of operation: mouse mode, single point acquisition mode,
+   and continuous points acquisition mode (allowing for both Continuous time and Continuous distance modes).
+   If your device differs from these assumptions, you'll have to adjust the code accordingly.
+
+7- Once the dll is compiled, copy it to the plugins directory of your Polyworks installation.
+   Ex: C:\Program Files\InnovMetric\PolyWorks MS 2021\plugins
+   Then, run as administrator the RegisterIMCOMServers.bat file found in the \bin directory of the
+   Polyworks installation to register the plug-in (this registration needs to be done only once.)
+
+8- Start the Workspace Manager, look for your plug-in's name in the Tools > Options > Plug-ins section,
+   select it, then click OK to close the Options window.
+
+9- To check if your Probe plug-in is correctly loaded by PolyWorks|Inspector (it's the only application that supports probing plug-ins),
+   open the Tools > Options window. In the Probing Device section, the Device name combo box shows the available
+   probing plug-ins (showing the name returned by DeviceNameGet).
+
+Note that it is a good practice to change the UUIDs and re-register your plug-in each time you make significant 
+changes to your plug-in. On systems with multiple versions of PolyWorks installed concurrently, this is particularly
+important to make sure that each version runs the plug-in located in its own plugins directory.
+
+Contact the PolyWorks SDK support team (supportsdk@innovmetric.com) for any question or comment
+
+Changes note:
+
+If you built your own plug-in based on an earlier version of this framework, we recommend that you use
+a file differences tracking tool (such as WinDiff or Araxis Merge) to compare the content of this version
+of the framework with the content of the framework you used to build you plug-in. This way, you'll better
+be able to see what part of the code was changed and decide whether you want to apply similar changes to
+your own plug-in.
+
+Changes in V2021 IR1:
+
+Replacement of raw pointers with CComPtr.
+Code updated to use nullptr instead of NULL when possible for type safety.
+
+Changes in V2019:
+
+Added Visual Studio 2017 support by including .vcxproj project file.
+Visual Studio 2013 support is still available through .vcxproj.VS2013 project file.
+Removed VisualStudio 2010 support by removing .vcxproj.VS2010 file.
+
+Changes in V2018:
+
+Removed VisualStudio 2005 support by removing .vcproj file.
+
+Changes in V2017 IR12:
+
+Changed the ProbingEnd method to stop and restart the application communication thread.
+Also changed the EndConnection method to call ProbingEnd BEFORE killing the threads.
+
+Changes in V2017 IR4:
+
+Changed the ProbingEnd method to handle the situation where a compensation point is rejected.
+
+Changes in V2016 IR5:
+
+Added support for Diagnostics using the environment variable PW_PLUGIN_DIAGNOSTICS.
+
+Changes in V2016 IR3:
+
+Centralize the cookies management in the function GITRevokeInterfaceFromGlobal.
+
+Changes in V2016:
+
+Added Visual Studio 2013 support by including .vcxproj project file.
+Visual Studio 2010 support is still available through .vcxproj.VS2010 project file.
+
+Added a retry mechanism when revoking interfaces from the Global Interface Table.
+Added the IIMProbe17 interface.
+
+Changes in V2015 IR8:
+
+Added the IIMProbe16 interface.
+
+Changes in V2015 IR5:
+
+Added the IIMProbe15 interface.
+
+Changes in V2014 IR6:
+
+Removed the SettingsSave method from the CCompanyNameProbeSettings class.
+Settings are now always automatically saved when exiting the host application.
+
+Changes in V2014:
+
+Added the IIMProbe13 and IIMProbe14 interfaces.
+
+Changes in V12.1.17:
+
+An abstraction layer has been added between the proprietary SDK and the plug-in, with an interface called IReceiver.
+
+An SDK stub has been added to reduce plug-in development time. Development should now be mostly localized 
+in the stub.
+
+The plug-in code has been revisited to reflect this behavior.
+
+Changes in V12.1.13:
+
+Changed how the Global Interface Table (GIT) is used to make sure to always obtain and release the pointer to the table.
+
+Changes in V12.1.8:
+
+Added the IIMPieceTemperature interface.
+
+Changes in V12.1:
+
+Changed the CComMessageFilter class to always retry when application tells the plug-in to retry a COM call.
+
+Changed CCompanyNameProbe::InitConnection to mention the correct command used to disconnect a scanning plug-in.
+
+Changes in V12.0.15:
+
+Added the IIMProbe12 interface.
+
+Changes in V12.0.14:
+
+Added Visual Studio 2010 support by including .vcxproj project file.
+
+Changes in V12.0.9:
+
+Added the IIMDeviceCamera and IIMProbe11 interfaces, as well as explaining how to use
+the IIMDeviceCameraFeedback and IIMProbeFeedback9 interfaces.
+
+Changes in V12.0.6:
+
+Added the IIMLanguage interface.
+
+Changes in V12.0.2:
+
+Changed the ProbingEnd method to make sure the probeLastPoint_ argument is always be respected,
+even when the compensation method is E_COMPENSATION_METHOD_FIRST_POINT_VECTOR, because some specific
+measurements always require a compensation point, regardless of the device's current compensation method.
+
+Changes in V12:
+
+Added usage of the IIMSoundCenter interface to play an error sound.
+Added usage of the IIMMessageCenter interface.
+Removed Visual C++ 6.0 support by removing .dsp project file.
+
+Changes in V11.0.30:
+
+IMPORTANT NOTICE: A problem has been found with the way threads were terminated in our previous C++ plug-in samples 
+(up to and including all 11.0.29 samples). Using a message loop to process COM messages while waiting for a thread 
+to terminate might cause PolyWorks to crash unexpectedly. Using the CoWaitForMultipleHandles method to process COM 
+messages while waiting for a thread to terminate solves this issue. Please check and update your plug-ins if needed. 
+The samples included with PolyWorks v11.0.30 are now correct. 
+
+Changes in V11.0.28:
+
+Added the IIMProbe10 interface.
+
+Changes in V11.0.27:
+
+Added the IIMProbe9 interface.
+
+Changes in V11.0.19:
+
+Added the IIMProbe8 interface.
+
+Changes in V11.0.15:
+
+Added the IIMDeviceLevel2, IIMPowerSource, and IIMProbe7 interfaces.
+
+Changes in V11.0.14:
+
+Added the device vertical axis setting for the new automatic viewpoint strategy. 
+
+Changes in V11.0.12:
+
+Added the IIMDeviceLevel interface.
+Added the IIMInputEventsEmitter interface.
+
+Changes in V11.0.8:
+
+Replaced std::list by std::vector to improve probed data recording performance.
+
+Changes in V11.0.6:
+
+Added the IIMProbe6 interface.
+
+Changes in V11.0.5:
+
+The threads are now started on a ConnectionInit instead of a ProbingStart in order to allow real-time positions
+to be sent to the application as soon as connection is established with the device.
+As a consequence of this change, the Remote Mouse mode is no longer disabled at the beginning of ThreadProcOne.
+
+Also, other numerous changes were made to optimize point acquisition rate in continuous probing modes.
+
+Changes in V11.0.2:
+
+Removed any references to obsolete shared transformation matrix settings.
+Added the IIMUnitsUser interface.
+
+Changes in V11.0.1:
+
+Removed a useless (and potentially dangerous) call to EndConnection in the destructor of the CCompanyNameProbe class.
+COM classes IDs (CLSID_*) are now declared in a different *.h file and defined in a different *_i.c file (e.g. IMInspect.h/_i.c).
+The application COM interface file no longer imports (includes) unnecessary interfaces for that file (additional #includes will be necessary).
+
+Changes in V11:
+
+Added Visual Studio 2005 support by including .vcproj project file.
+Added the IIMProbe5 interface.
+
+Changes in V10.1.14:
+
+Added the IIMProbe4 interface.
+
+Changes in V10.1:
+
+IMPORTANT NOTICE: A problem has been found with the way threads were created in our previous C++ plug-in samples
+(up to and including all 10.0.x samples). The functions that were used with the CreateThread method did
+not respect the standard signature for such functions (i.e.: DWORD __stdcall FnName( void* )), missing the
+critically important __stdcall instruction. Please check and update your plug-ins if needed in order to make
+them fully compatible with PolyWorks V10.1. Plug-ins that are not conform might cause PolyWorks to crash
+unexpectedly. The samples included with PolyWorks V10.1 are now correct.
+
+When using secondary threads to make COM calls, make sure you use a message filter (see IMessageFilter in MSDN),
+such as the CComMessageFilter now included in this sample. This will prevents calls from being rejected and lost.
+
+When the acquisition is ended through the device (ex: pushing a button), do not end acquisition yet
+(ex: do not change to Mouse Mode). Wait instead for the application to call your ProbingEnd method.
+
+Ending and restarting probing with the device is now optional (most devices do not require it) and reduces the
+minimum code required for the IIMProbe::DiameterGet, IIMProbe::PropertiesDlgShow and CCompanyNameProbe::UnitsSet
+methods.
+
+In order to avoid conflict while accessing hardware or software resources that might be used by
+another non-probing plug-in (probing plug-ins are already exclusive), it is now recommended to send commands
+(if any exist) via the IIMCommandCenter interface in order to close and disconnect any existing plug-in that
+you know might use the same resources before attempting to connect to those resources in your plug-in.
+For example, if you have a probing plug-in that uses the same tracking system as an existing scanning plug-in,
+then you might want to call any related "DIGITIZE DEVICE [...] CONNECT( "Off" )" command as one of the very
+first steps in your IIMProbe::InitConnection method.
+Calling commands means obtaining a IIMCommandCenter interface pointer from your host module in your
+IIMPlugin::Load method.
+See CCompanyNameProbe::InitConnection for details.
+
+Changes in V10.0.4:
+
+The application now handles the automatic viewpoint option, so probing plug-ins no longer need to implement
+the IIMProbe::UseAutoViewpointGet and IIMProbe::UseAutoViewpointSet methods.
+ 
+Changes in V10:
+
+Changed the threading model to Apartment, which requires the use of the Global Interface Table to share
+COM pointers across threads. Also, when we're waiting for a thread to die, we process the application's
+messages (COM messages are Windows messages after all).
+
+Added the IIMProbe3 interface.
+
+IIMProbeFeedback::ProbingEndAndRestart is now an obsolete method and has been removed from the framework,
+along with the AcquisitionEndStatusGet/Set methods, the m_AcquisitionEndStatus and m_nbPointsRecorded variables
+and the EAcquisitionEndFlag enum.
+Only IIMProbeFeedback::ProbingEnd needs to be used from now on, and plug-ins no longer need to keep track of
+the number of points they probed.
+
+Changes in V9.1:
+
+IIMProbeFeedback::NbPointsSet is now an obsolete method and has been removed from the framework.
+
+Removed the m_statusAcquisitionButtonHit variable and changed the location where 
+AcquisitionEndStatusSet( E_END_AND_RESTART ) was called (upon taking a point, instead of just before
+ending the probing).
+
+The return value of calls to IIMPointCloud::PointsAdd must be compared to S_OK to know if the points have been accepted by
+the point cloud. Calls to IIMProbeFeedback::LastRecordPositionSet should happen only when the points have been accepted.
+
+Added the IIMProbe2 interface.
+
+The Scan mode was removed and replaced by the Continuous Time and Continuous Distance modes.
+
+When changing mode, added a call to the IIMProbeFeedback2::ContinuousModeEnabled method.
+
+Changes in V9 pr:
+
+Added method CanChangeUnits to IIMProbe.
+Added methods ConnectionEnd, ModeSet and UnitsSet to IIMProbeFeedBack.
+
+Added methods MeasurementStart, MeasurementStop and NeedMeasurementButtons to IIMProbe.
+Added methods MeasurementStart and MeasurementStop to IIMProbeFeedback.
+
+Renamed ECompensationMethod for ECompensationMethods.
+
+Changed methods UseProbeAsMouseGet/Set of IIMProbe for UseDeviceAsMouseGet/Set.
+Changed OffsetGet of IIMProbe for DiameterGet and returns a diameter instead of a radius.
+
+Added methods CanUseDeviceAsMouse to IIMProbe.
+
+In CCompanyNameProbe::PointAdd, use of pVector is now mandatory, if possible. Removed all TODOs in this method.

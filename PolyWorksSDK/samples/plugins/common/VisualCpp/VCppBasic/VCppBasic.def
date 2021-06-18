@@ -1,0 +1,9 @@
+; VCppBasic.def : Declares the module parameters.
+
+LIBRARY      "VCppBasic.DLL"
+
+EXPORTS
+	DllCanUnloadNow     PRIVATE
+	DllGetClassObject   PRIVATE
+	DllRegisterServer   PRIVATE
+	DllUnregisterServer	PRIVATE

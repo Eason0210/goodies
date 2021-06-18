@@ -1,0 +1,42 @@
+// CompanyNameProbe.idl : IDL source for CompanyNameProbe.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (CompanyNameProbe.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+    [
+        object,
+        uuid(9491108D-561A-4565-81A5-5E5216915AFC),
+        dual,
+        helpstring("ICompanyNameProbePlugin Interface"),
+        pointer_default(unique)
+    ]
+    interface ICompanyNameProbePlugin : IDispatch
+    {
+    };
+
+[
+    uuid(6B07E974-5F3F-4E19-8991-212850B33B47),
+    version(1.0),
+    helpstring("CompanyNameProbe 1.0 Type Library")
+]
+library COMPANYNAMEPROBELib
+{
+    importlib("stdole32.tlb");
+    importlib("stdole2.tlb");
+    // TODO: Put the correct path to IIMPlugin.tlb here
+    importlib("..\..\..\..\..\include\PolyWorksSDK\COM\IIMPlugin.tlb");
+
+
+    [
+        uuid(EC2CE725-CD92-4174-81C1-58C51292D9D0),
+        helpstring("CompanyNameProbePlugin Class")
+    ]
+    coclass CompanyNameProbePlugin
+    {
+        [default] interface ICompanyNameProbePlugin;
+        interface IIMPlugin;
+    };
+};

@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Main">
+      <UniqueIdentifier>{f8110907-fd46-4260-8d5c-16127537663c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{9e7bb756-0973-4ec2-a5b9-2b46c540ec30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="COM SDK">
+      <UniqueIdentifier>{93b60e6f-c7ad-45bc-a474-bc8eb7c5109a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="COM SDK\Util">
+      <UniqueIdentifier>{867b6a34-5ec8-4495-8842-2ad378d8a20f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C++ SDK">
+      <UniqueIdentifier>{d62e2538-b388-45be-ba61-18fe4f522afe}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CompanyName.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="CCompanyNameCommands.cpp">
+      <Filter>COM SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="CCompanyNameComPlugin.cpp">
+      <Filter>COM SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="CComCommand.cpp">
+      <Filter>COM SDK\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CComCommandInfo.cpp">
+      <Filter>COM SDK\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CComCommandInfoImpl.cpp">
+      <Filter>COM SDK\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CComCommandParameter.cpp">
+      <Filter>COM SDK\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CComCommandParameterEnum.cpp">
+      <Filter>COM SDK\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CComCommandParameterEnumImpl.cpp">
+      <Filter>COM SDK\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CComCommandParameterInfo.cpp">
+      <Filter>COM SDK\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CComCommandParameterInfoImpl.cpp">
+      <Filter>COM SDK\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="SafeArrayConversion.cpp">
+      <Filter>COM SDK\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CCompanyNameCppPlugin.cpp">
+      <Filter>C++ SDK</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CompanyName.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CompanyNameComPlugin.rgs">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="CompanyName.def">
+      <Filter>COM SDK</Filter>
+    </None>
+    <None Include="HowToCreateYourOwnPlugin.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="CCompanyNameCommands.h">
+      <Filter>COM SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CCompanyNameComPlugin.h">
+      <Filter>COM SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CComCommand.h">
+      <Filter>COM SDK\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CComCommandInfo.h">
+      <Filter>COM SDK\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CComCommandInfoImpl.h">
+      <Filter>COM SDK\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CComCommandParameter.h">
+      <Filter>COM SDK\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CComCommandParameterEnum.h">
+      <Filter>COM SDK\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CComCommandParameterEnumImpl.h">
+      <Filter>COM SDK\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CComCommandParameterInfo.h">
+      <Filter>COM SDK\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CComCommandParameterInfoImpl.h">
+      <Filter>COM SDK\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="SafeArrayConversion.h">
+      <Filter>COM SDK\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="StrUtil.h">
+      <Filter>COM SDK\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CCompanyNameCppPlugin.h">
+      <Filter>C++ SDK</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="CompanyName.idl">
+      <Filter>COM SDK</Filter>
+    </Midl>
+  </ItemGroup>
+</Project>
